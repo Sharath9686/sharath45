@@ -46,15 +46,17 @@ function AboutUsPage() {
   return (
     <>
 
-      <section className="about-section">
+            <section className="about-section">
         <h2>About our Doctors</h2>
-        <div className='About-Doctors'>
-          {AboutourDoctors.map(service => (
-            <div key={service.id} className="about-card">
-              <div className="about-icon">{service.Immage}</div>
-              <h3>{service.Name}</h3>
-              <p>{service.AboutDoctor}</p>
-              <Link to={service.link} className="about-link">Learn More</Link>
+        <div className="About-Doctors">
+          {doctorsData.map((doctor) => (
+            <div key={doctor.id} className="about-card">
+              <div className="about-icon">{doctor.Immage}</div>
+              <h3>{doctor.DoctorName}</h3>
+              <p>{doctor.AboutDoctor}</p>
+              <a href={doctor.link} target="_blank" rel="noopener noreferrer" className="about-link">
+                Learn More
+              </a>
             </div>
           ))}
         </div>
